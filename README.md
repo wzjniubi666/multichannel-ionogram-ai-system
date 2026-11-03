@@ -1,4 +1,4 @@
-# 电离图智能识别系统 · Ionogram AI System
+# 多通道电离图智能识别系统 · Multichannel Ionogram AI System
 
 FPGA MVDR beamforming and YOLO ionogram echo recognition on PZ-K7325T-FH / XC7K325T.
 
@@ -43,7 +43,7 @@ report/
 ## 使用
 
 ```powershell
-git clone https://github.com/wzjniubi666/-.git ionogram-ai-system
+git clone https://github.com/wzjniubi666/multichannel-ionogram-ai-system.git ionogram-ai-system
 cd ionogram-ai-system
 python metrics/scripts/verify_publication.py
 # 安装NumPy的环境可重放包内数值夹具（不连接板卡）

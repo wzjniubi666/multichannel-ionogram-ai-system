@@ -20,7 +20,7 @@
     "report local workspace paths"
   ],
   "licence": "AGPL-3.0 for project-authored parts; third-party terms retained",
-  "repository": "wzjniubi666/-",
+  "repository": "wzjniubi666/multichannel-ionogram-ai-system",
   "validation": "python metrics/scripts/verify_publication.py --numerics",
   "report_headers_anonymized": true,
   "additional_historical_files_omitted": 54,

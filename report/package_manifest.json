@@ -10153,8 +10153,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4324,
-      "sha256": "351BFA307850A8646A4368D052A9D02683759CFE5DEC157F25B4E7FC1E69BAC1"
+      "bytes": 4376,
+      "sha256": "2365DD73CCCB9A49E9594FF22B8ACD19B0157B5F7D403556BB73B694D101D6D5"
     },
     {
       "path": "report/design_report.md",
@@ -10173,8 +10173,8 @@
     },
     {
       "path": "report/publication_summary.json",
-      "bytes": 1126,
-      "sha256": "6EC9277F22D8A70D55AB1ABC597D735C925F36F0694DEE8C116DCCCA55BE0770"
+      "bytes": 1156,
+      "sha256": "972D8CFE4059A32FC995B897D620E56073CD7BC6678A1C1C54F3E82D947AF35E"
     },
     {
       "path": "report/recognition_integrity.json",
@@ -10184,7 +10184,7 @@
     {
       "path": "report/source_manifest.json",
       "bytes": 505986,
-      "sha256": "F32A5A4D87C1089088AA3C8D24D7A3F8D98F9642B4905C2C6A50C3D30A0080D6"
+      "sha256": "FCE72787A0E0354BC3802C8F4434F7E4F8669376B90C32C4B596603DCCC39361"
     },
     {
       "path": "SECURITY.md",

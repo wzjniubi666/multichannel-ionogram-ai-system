@@ -1,0 +1,29 @@
+# Local environments and secrets
+.venv*/
+venv/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db
+# User data, logs, network backups and generated products
+metrics/runs/
+**/jobs/
+**/results/
+**/plans/
+**/network_state.json
+**/workspace.path
+**/settings.local.json
+host/app/beamforming/com/settings.json
+host/deploy/recognition/ultralytics_config/
+*.dcp
+*.wdb
+*.sqlite3
+*.jou
+.Xil/
+fpga/build/**/work/
+fpga/build/**/generated/

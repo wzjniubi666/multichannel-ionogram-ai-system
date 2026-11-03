@@ -1,0 +1,6 @@
+{
+  "hub_python": "../.venv-cos/Scripts/python.exe",
+  "recognition_python": "",
+  "hardware_mode": "sequential_two_bitstreams",
+  "note": "Select a Python 3.10 environment with the recognition dependencies in the system window. No environment binaries are bundled."
+}

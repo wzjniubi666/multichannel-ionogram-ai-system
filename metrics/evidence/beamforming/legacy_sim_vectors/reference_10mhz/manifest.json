@@ -1,0 +1,86 @@
+{
+  "channels": 16,
+  "snapshots": 256,
+  "frequency_mhz": 10,
+  "azimuth_deg": 113,
+  "elevation_deg": 35,
+  "spacing_m": 10,
+  "weight_frac": 23,
+  "loading": 0.01,
+  "loading_integer": 72330,
+  "covariance_scale": "sum, not mean",
+  "iq_order": "snapshot*16+channel",
+  "matrix_order": "row*16+column",
+  "hex_encoding": "signed two's complement, one word per line",
+  "steering_convention": "current model: exp(+j*2*pi*p.u/lambda), u=(cos(el)*sin(az),cos(el)*cos(az),sin(el))",
+  "data_scope": "first 256 IQ pairs; file frequency segmentation is not verified; 10MHz is a reference assumption",
+  "geometry_scope": "8 elements per arm, origin empty; assumed mapping ch0..7 x, ch8..15 y",
+  "condition_number": 783.5054837950801,
+  "constraint_error": 2.42861286636753e-17,
+  "sources": [
+    {
+      "file": "C,16,2.000_0.050_20.000,8_320_16,20260602_183600,LOCATION_REDACTED,ch_00.cos",
+      "first_1024_bytes_sha256": "8a7f54390140d89b1e258ee8d1805ffcfc2210f4886dbed7259f252994e69bd1"
+    },
+    {
+      "file": "C,16,2.000_0.050_20.000,8_320_16,20260602_183600,LOCATION_REDACTED,ch_01.cos",
+      "first_1024_bytes_sha256": "9d89c16209dccb0978fea2c396f7ee351477bf70e4e85e0893ab0429613b2672"
+    },
+    {
+      "file": "C,16,2.000_0.050_20.000,8_320_16,20260602_183600,LOCATION_REDACTED,ch_02.cos",
+      "first_1024_bytes_sha256": "6bfa92298ba13a6a58d69af94ddfa07480b7fa5f0ab94e7bf15eb2fd5db0b912"
+    },
+    {
+      "file": "C,16,2.000_0.050_20.000,8_320_16,20260602_183600,LOCATION_REDACTED,ch_03.cos",
+      "first_1024_bytes_sha256": "cd245ade9f758fdf4032d55707eb5965d7a75fc2420427b3519b4f6f0e7de23d"
+    },
+    {
+      "file": "C,16,2.000_0.050_20.000,8_320_16,20260602_183600,LOCATION_REDACTED,ch_04.cos",
+      "first_1024_bytes_sha256": "f4c8b8e29843f92d8b0848d90d5a8ad34a4cdfc005b4150a6211b44fc5e0e4ee"
+    },
+    {
+      "file": "C,16,2.000_0.050_20.000,8_320_16,20260602_183600,LOCATION_REDACTED,ch_05.cos",
+      "first_1024_bytes_sha256": "21d35927ae3e3fd5b0c5c014f7755a34bf4bf5adc318fb36f476af4e735c9b5c"
+    },
+    {
+      "file": "C,16,2.000_0.050_20.000,8_320_16,20260602_183600,LOCATION_REDACTED,ch_06.cos",
+      "first_1024_bytes_sha256": "78266e7fd229c56de9c2d444e9fc1ed9c349d406d57d27d41967e1bbe079e572"
+    },
+    {
+      "file": "C,16,2.000_0.050_20.000,8_320_16,20260602_183600,LOCATION_REDACTED,ch_07.cos",
+      "first_1024_bytes_sha256": "4f4ab47299342bd398d6238f1ffa0a92c2c289f462f2bdb243f32fed4c820db9"
+    },
+    {
+      "file": "C,16,2.000_0.050_20.000,8_320_16,20260602_183600,LOCATION_REDACTED,ch_08.cos",
+      "first_1024_bytes_sha256": "15558735394a298d38ffc104bf93b786f127c496bb0c7d1f49e54f50aca7b9e5"
+    },
+    {
+      "file": "C,16,2.000_0.050_20.000,8_320_16,20260602_183600,LOCATION_REDACTED,ch_09.cos",
+      "first_1024_bytes_sha256": "601c6994d750ffd9bb372f517b92127aaa55ef76e9b31bcce338b4fa3e190720"
+    },
+    {
+      "file": "C,16,2.000_0.050_20.000,8_320_16,20260602_183600,LOCATION_REDACTED,ch_10.cos",
+      "first_1024_bytes_sha256": "0571e0684bd2cffb3b41f2ecd916c35a7bd804091c4fbb3cab7fc32c758ee6f7"
+    },
+    {
+      "file": "C,16,2.000_0.050_20.000,8_320_16,20260602_183600,LOCATION_REDACTED,ch_11.cos",
+      "first_1024_bytes_sha256": "15f409b015ee4c393c37363ca36245c50bf54882aa3db098d8e5b9119a022ced"
+    },
+    {
+      "file": "C,16,2.000_0.050_20.000,8_320_16,20260602_183600,LOCATION_REDACTED,ch_12.cos",
+      "first_1024_bytes_sha256": "94d4a0f4df8ee1fbe24d05e44f42854b230a31fc682417a4e8538b3dd67abc9b"
+    },
+    {
+      "file": "C,16,2.000_0.050_20.000,8_320_16,20260602_183600,LOCATION_REDACTED,ch_13.cos",
+      "first_1024_bytes_sha256": "eb5dac654ae2b94b4c2210a258b2b6cc99b42024433c01c0e1a6613b160eda9b"
+    },
+    {
+      "file": "C,16,2.000_0.050_20.000,8_320_16,20260602_183600,LOCATION_REDACTED,ch_14.cos",
+      "first_1024_bytes_sha256": "f5872edc15b3f1ef193e02bbddf120d290432de4d1ffb7dfdba9927a9d21231b"
+    },
+    {
+      "file": "C,16,2.000_0.050_20.000,8_320_16,20260602_183600,LOCATION_REDACTED,ch_15.cos",
+      "first_1024_bytes_sha256": "4fbe1cd3cf57fe5efadc6a8932933fec1e76779d51e8e8e46065033d6bd4d323"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+# OFFLINE CANDIDATE: PCB relative trace skew +/-0.25ns is an assumption.
+# Evidence: core schematic PDF5 (sheet6) / PDF11 (sheet12), PHY PDF70 table58.
+set_property CFGBVS VCCO [current_design]
+set_property CONFIG_VOLTAGE 3.3 [current_design]
+set_property PACKAGE_PIN AG10 [get_ports sys_clk_p]
+set_property PACKAGE_PIN AH10 [get_ports sys_clk_n]
+set_property IOSTANDARD LVDS [get_ports {sys_clk_p sys_clk_n}]
+set_property IOSTANDARD LVCMOS33 [get_ports {sys_rstn rgmii_* phy_* led[*]}]
+set_property PACKAGE_PIN T26 [get_ports sys_rstn]
+set_property PACKAGE_PIN U27 [get_ports rgmii_rxc]
+set_property PACKAGE_PIN W26 [get_ports rgmii_rx_ctl]
+set_property PACKAGE_PIN V27 [get_ports {rgmii_rxd[0]}]
+set_property PACKAGE_PIN V29 [get_ports {rgmii_rxd[1]}]
+set_property PACKAGE_PIN V30 [get_ports {rgmii_rxd[2]}]
+set_property PACKAGE_PIN V25 [get_ports {rgmii_rxd[3]}]
+set_property PACKAGE_PIN U28 [get_ports rgmii_txc]
+set_property PACKAGE_PIN V26 [get_ports rgmii_tx_ctl]
+set_property PACKAGE_PIN T25 [get_ports {rgmii_txd[0]}]
+set_property PACKAGE_PIN U25 [get_ports {rgmii_txd[1]}]
+set_property PACKAGE_PIN U29 [get_ports {rgmii_txd[2]}]
+set_property PACKAGE_PIN U30 [get_ports {rgmii_txd[3]}]
+set_property PACKAGE_PIN V19 [get_ports phy_mdc]
+set_property PACKAGE_PIN V20 [get_ports phy_mdio]
+set_property PACKAGE_PIN W23 [get_ports phy_reset_n]
+set_property PACKAGE_PIN U24 [get_ports {led[0]}]
+set_property PACKAGE_PIN V24 [get_ports {led[1]}]
+set_property PACKAGE_PIN W21 [get_ports {led[2]}]
+set_property PACKAGE_PIN W22 [get_ports {led[3]}]
+set_property PACKAGE_PIN W19 [get_ports {led[4]}]
+set_property SLEW FAST [get_ports {rgmii_txc rgmii_tx_ctl rgmii_txd[*]}]
+set_property DRIVE 8 [get_ports {rgmii_txc phy_mdc phy_mdio}]
+set_property DRIVE 12 [get_ports {rgmii_tx_ctl rgmii_txd[*]}]
+create_clock -name core_clk -period 5.000 [get_ports sys_clk_p]
+create_clock -name rx_clk -period 8.000 [get_ports rgmii_rxc]
+create_generated_clock -name mdc_internal -source [get_ports sys_clk_p] -divide_by 200 [get_pins mdc_divide_reg/Q]
+create_generated_clock -name mdc_forward -source [get_pins u_mdc_forward/C] -divide_by 1 [get_ports phy_mdc]
+# 45/55 duty at 8ns => 0.4ns half-cycle departure. Apply conservatively to RX tree.
+set_clock_uncertainty -setup 0.400 [get_clocks rx_clk]
+set_clock_uncertainty -hold 0.400 [get_clocks rx_clk]
+set_clock_uncertainty -setup 0.100 [get_clocks core_clk]
+# Post-synthesis board_rgmii_duty_model.tcl constrains both DDR edges against
+# the actual RXC waveform and PHY internal capture delay. Recheck 45/50/55% duty.
+# PHY MDIO changes after rising MDC; FPGA samples at the following falling edge.
+# Maximum 300ns + assumed 2ns PCB roundtrip; minimum 0ns remains conservative.
+set_input_delay -clock mdc_forward -max 302.000 [get_ports phy_mdio]
+set_input_delay -clock mdc_forward -min 0.000 [get_ports phy_mdio]
+set_output_delay -clock mdc_forward -max 12.000 [get_ports phy_mdio]
+set_output_delay -clock mdc_forward -min -10.000 [get_ports phy_mdio]
+# Dedicated asynchronous reset request: release is synchronized separately per domain.
+set_false_path -from [get_ports sys_rstn]
+# Human LEDs and millisecond hardware-reset pulse have no synchronous receiver.
+set_false_path -to [get_ports {led[*] phy_reset_n}]

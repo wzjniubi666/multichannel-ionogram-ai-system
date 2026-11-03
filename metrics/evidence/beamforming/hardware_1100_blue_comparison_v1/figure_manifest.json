@@ -1,0 +1,115 @@
+{
+  "status": "PASS_HARDWARE_BLUE_COMPARISON",
+  "plan_sha256": "0AD3966BAF82C5DD852B1083C429EC463F613F55D52EEB7462C736746B24CE05",
+  "source_files_sha256": {
+    "scan_results.npz": "9DAC1162EA8DA0C2E09B2C72E094688D128EA034227D9021D643B3908600A69E",
+    "scan.sqlite3": "1516895C9478E9710716DA1BFFA905ACEECD2DA114A0E7E343E1DE2EFB6C47C3",
+    "scan_summary.json": "DFC0FF3B0EAF0B72B7AC531CD8BF6F774661899743D9F730E3085848F22A7663",
+    "ionogram.png": "76A27672590FFB2C74C0622CC547F4E09069B439037959E8B2A326ADCF52A2AF"
+  },
+  "original_files_unchanged": true,
+  "verified_journal_rows": 4838,
+  "verified_result_samples": 2477056,
+  "actual_input_payloads_checked": true,
+  "all_saved_hardware_results_match_npz_and_fixed_reference": true,
+  "single_channel": "zero-based00 from exact transmitted int16 IQ divided by stored gain; offline baseline",
+  "hardware_channel": "14-effective MVDR from verified journal/NPZ; not recomputed beam",
+  "integration": "abs(sum512(I+jQ)/gain)**2",
+  "common_background": "median(single00 coherent power over all118 lags per frequency)/ln2",
+  "individual_background": "separate median/ln2 per method and frequency; structural comparison only",
+  "recolour_preserves_original_db": true,
+  "range_convention": "(lag+1)*7.68km, uncalibrated",
+  "colormap": "jet (explicit user request to match previous blue/rainbow palette; not perceptually uniform)",
+  "color_limits_db": [
+    0,
+    40
+  ],
+  "smoothing": false,
+  "interpolation": false,
+  "range_mask": false,
+  "point_count": 4838,
+  "point_shape": [
+    41,
+    118
+  ],
+  "clipped_display_counts": {
+    "single00": {
+      "below_0_db": 2995,
+      "above_40_db": 0,
+      "finite": 4838,
+      "raw_range_db": [
+        -52.433718036477515,
+        29.50975385336981
+      ]
+    },
+    "mvdr14_original": {
+      "below_0_db": 2916,
+      "above_40_db": 0,
+      "finite": 4838,
+      "raw_range_db": [
+        -35.28152627899085,
+        18.91033610465686
+      ]
+    },
+    "mvdr14_common": {
+      "below_0_db": 4831,
+      "above_40_db": 0,
+      "finite": 4838,
+      "raw_range_db": [
+        -55.17336298681152,
+        1.8360642502640203
+      ]
+    }
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.5.4",
+    "matplotlib": "3.11.2"
+  },
+  "script_sha256": "C2FF094E8FA8183E0FE01ECDBD641BCCE3591D527C14B71BBE9936DD025A1D62",
+  "images": [
+    {
+      "filename": "mvdr14_hardware_blue.png",
+      "pixels": [
+        1800,
+        1520
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    },
+    {
+      "filename": "single00_vs_mvdr14_common_background.png",
+      "pixels": [
+        2840,
+        1560
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    },
+    {
+      "filename": "single00_vs_mvdr14_individual_background.png",
+      "pixels": [
+        2840,
+        1560
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    }
+  ],
+  "files_sha256": {
+    "comparison_data.csv": "5BC100EC9DB752459E16EAC15DFE9EC9C5BA53A2B97864CC306AC47214B1054C",
+    "comparison_data.npz": "A9169593EE426E4FFF3518C2DCBB7839BE79CD6A74FBAB3275B5BF7960F2BD3A",
+    "mvdr14_hardware_blue.pdf": "530F8393357BE84F6C6EDCB3BF21F5CF3CB4490B560A0E0D78D2F7BF4974CEBA",
+    "mvdr14_hardware_blue.png": "1B5A58DB0FBCED43482CD47167F7D795676D093664A500E29F69FB26D1B933DF",
+    "single00_vs_mvdr14_common_background.pdf": "E4C6E5F41BCFDCAF9FA70856951897F4EE8F356DD1E8948ABDDA79BDE4613EB7",
+    "single00_vs_mvdr14_common_background.png": "A7112051D61BC0944CE5DE0C6EDC0F942FD924FA86DD593CC582CC0E351F36DE",
+    "single00_vs_mvdr14_individual_background.pdf": "B85D0FEDDE6EDE1EFD51DD1862492100F0273E65AFBC3B4A9322CFE11CC6E0BB",
+    "single00_vs_mvdr14_individual_background.png": "6B0E63AEF339D0DE0602A64EFC3F3BCE987B963B7A9A721C31CE8BC705322A24"
+  }
+}

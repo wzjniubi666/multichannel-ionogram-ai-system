@@ -1,0 +1,113 @@
+{
+  "status": "COMPLETE_HARDWARE",
+  "source": "hardware",
+  "hardware_measurements": true,
+  "protocol": "BFM1/2",
+  "plan_sha256": "09F6EBACC3D5CEEA67E85B983D5FE2ACF24671E445759FEC6F400D42C7C8DDEB",
+  "planned_frames": 4838,
+  "verified_frames": 4838,
+  "effective_channels": 14,
+  "active_channel_mask": 32639,
+  "excluded_channels": [
+    7,
+    15
+  ],
+  "complete_pixels": 4838,
+  "planned_pixels": 4838,
+  "records_per_frame": 512,
+  "joint_512_record_weights": true,
+  "attempts": 4838,
+  "run_error": null,
+  "integration": "one shared MVDR weight set per512 periods; sum512 complex outputs before power",
+  "range_conversion": "HF reference (lag+1)*7.68km; no independent calibration",
+  "physical_parameters_verified": false,
+  "prepared_numerical_quality": {
+    "max_weight_error": 0.0006022869473479212,
+    "max_constraint_error": 0.00092924272104296,
+    "beam_relative_l2_range": [
+      0.001120196474511826,
+      0.02144563594028872
+    ],
+    "beam_relative_l2_over_2percent": 8,
+    "note": "reported diagnostic, not SNR; weak outputs are sensitive to integer rounding"
+  },
+  "actual_reference_code_sha256": "85B8730EA68A0F67193280D35DD26D53C5BB88651D43878AF29F829F815F0335",
+  "no_reference_fill": true,
+  "no_automatic_retry": true,
+  "plot": {
+    "filename": "ionogram.png",
+    "db_limits": [
+      0.0,
+      40.0
+    ],
+    "reference": {
+      "background_by_frequency": [
+        134518334.07830802,
+        151330190.6750358,
+        160994829.27976668,
+        283243197.84637845,
+        204347368.02301735,
+        354308765.71063375,
+        377742539.1653254,
+        163448629.92658746,
+        372632115.1466654,
+        417506091.22613674,
+        1281315312.113848,
+        456302838.5176369,
+        637854459.1970155,
+        1248618267.913666,
+        656808249.0535752,
+        228904741.22945413,
+        228862415.44234455,
+        3057935116.01349,
+        3733450638.7365985,
+        69001026.5371969,
+        75491427.31523329,
+        2998836417.859791,
+        41903989.96723331,
+        52970363.15626285,
+        17887440.752458967,
+        10812938.197260423,
+        9624821.303623607,
+        6255933.303727817,
+        29106016.104259737,
+        527640804.5179525,
+        10685300.622613536,
+        39498757.288290285,
+        9981859.472342808,
+        30502984.024143327,
+        4800680.504192315,
+        6657526.899658091,
+        6728503.167584706,
+        37269751.25128689,
+        3294679.9598249244,
+        4797701.69960664,
+        9635460.638539523
+      ],
+      "method": "median_power/ln2"
+    },
+    "below_display_limit": 3022,
+    "above_display_limit": 0,
+    "raw_values_retained": true,
+    "interpolation": false,
+    "smoothing": false,
+    "missing_colour": "#bbbbbb"
+  },
+  "noncoherent_plot": {
+    "filename": "ionogram_noncoherent.png",
+    "db_limits": [
+      -37.56143624619659,
+      0.0
+    ],
+    "reference": {
+      "reference_power": 40606320.0,
+      "method": "shared_peak"
+    },
+    "below_display_limit": 0,
+    "above_display_limit": 0,
+    "raw_values_retained": true,
+    "interpolation": false,
+    "smoothing": false,
+    "missing_colour": "#bbbbbb"
+  }
+}

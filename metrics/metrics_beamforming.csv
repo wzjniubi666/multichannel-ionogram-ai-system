@@ -1,0 +1,35 @@
+﻿metric,value,unit,scope,status,evidence,note
+physical_channels,16,channels,ACTIVE14,historical_observed,metrics/evidence/release/contract.md,
+active_channels,14,channels,ACTIVE14,historical_observed,metrics/evidence/release/contract.md,
+active_mask,0x7F7F,mask,ACTIVE14,historical_observed,metrics/evidence/release/contract.md,
+records_per_frame,512,records,ACTIVE14,historical_observed,metrics/evidence/release/contract.md,
+core_clock,200,MHz,implementation_v4,historical_observed,fpga/report/active14_implementation/implementation_summary.json,
+WNS_ns,0.007,ns,implementation_v4 RX duty 50%,historical_observed,fpga/report/active14_implementation/implementation_summary.json,
+WHS_ns,0.051,ns,implementation_v4 RX duty 50%,historical_observed,fpga/report/active14_implementation/implementation_summary.json,
+WPWS_ns,0.264,ns,implementation_v4 RX duty 50%,historical_observed,fpga/report/active14_implementation/implementation_summary.json,
+WNS_ns,0.007,ns,implementation_v4 RX duty 45%,historical_observed,fpga/report/active14_implementation/implementation_summary.json,
+WHS_ns,0.051,ns,implementation_v4 RX duty 45%,historical_observed,fpga/report/active14_implementation/implementation_summary.json,
+WPWS_ns,0.264,ns,implementation_v4 RX duty 45%,historical_observed,fpga/report/active14_implementation/implementation_summary.json,
+WNS_ns,0.007,ns,implementation_v4 RX duty 55%,historical_observed,fpga/report/active14_implementation/implementation_summary.json,
+WHS_ns,0.051,ns,implementation_v4 RX duty 55%,historical_observed,fpga/report/active14_implementation/implementation_summary.json,
+WPWS_ns,0.264,ns,implementation_v4 RX duty 55%,historical_observed,fpga/report/active14_implementation/implementation_summary.json,
+slice_luts,15797,count,implementation_v4,historical_observed,fpga/report/active14_implementation/utilization.rpt,
+slice_registers,46433,count,implementation_v4,historical_observed,fpga/report/active14_implementation/utilization.rpt,
+block_ram_tiles,30.5,count,implementation_v4,historical_observed,fpga/report/active14_implementation/utilization.rpt,
+dsps,106,count,implementation_v4,historical_observed,fpga/report/active14_implementation/utilization.rpt,
+planned_frames,4838,count,hardware_20261028,historical_hardware,metrics/evidence/hardware_20261028/scan_summary.json,
+verified_frames,4838,count,hardware_20261028,historical_hardware,metrics/evidence/hardware_20261028/scan_summary.json,
+records_per_frame,512,count,hardware_20261028,historical_hardware,metrics/evidence/hardware_20261028/scan_summary.json,
+status,COMPLETE_HARDWARE,state,hardware_20261028,historical_hardware,metrics/evidence/hardware_20261028/scan_summary.json,
+planned_frames,4838,count,hardware_20261029,historical_hardware,metrics/evidence/hardware_20261029/scan_summary.json,
+verified_frames,4838,count,hardware_20261029,historical_hardware,metrics/evidence/hardware_20261029/scan_summary.json,
+records_per_frame,512,count,hardware_20261029,historical_hardware,metrics/evidence/hardware_20261029/scan_summary.json,
+status,COMPLETE_HARDWARE,state,hardware_20261029,historical_hardware,metrics/evidence/hardware_20261029/scan_summary.json,
+physical_SNR_gain,N/A,not_measured,project,not_available,report/design_report.md,No corresponding calibrated measurement/model in source project
+recognition_accuracy,N/A,not_measured,project,not_available,report/design_report.md,No corresponding calibrated measurement/model in source project
+measured_end_to_end_throughput,N/A,not_measured,project,not_available,report/design_report.md,No corresponding calibrated measurement/model in source project
+measured_power,N/A,not_measured,project,not_available,report/design_report.md,No corresponding calibrated measurement/model in source project
+desktop_offline_tests,9,cases,desktop adapted,new_offline_pass,metrics/logs/desktop_supplement/python_tests.json,No real FPGA traffic or adapter changes
+desktop_network_mock_cases,5,cases,desktop adapted,new_offline_pass,metrics/logs/desktop_supplement/network_mocks.json,No real FPGA traffic or adapter changes
+live_desktop_python_regression,13,cases,desktop live v1.2,offline_pass,metrics/logs/live_progress_fix/python_regression.log,No new FPGA traffic
+live_network_cleanup_mocks,5,cases,desktop live v1.2,offline_pass,metrics/logs/live_progress_fix/network_regression.json,No real adapter changes

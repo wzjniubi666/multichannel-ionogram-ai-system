@@ -1,0 +1,17 @@
+* text=auto
+*.py text eol=lf
+*.md text eol=lf
+*.ps1 text eol=crlf
+*.v text eol=lf
+*.sv text eol=lf
+*.tcl text eol=lf
+*.pt binary
+*.bit binary
+*.ltx binary
+*.mat binary
+*.npy binary
+*.npz binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.exe binary

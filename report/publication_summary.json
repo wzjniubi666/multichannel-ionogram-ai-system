@@ -1,0 +1,31 @@
+{
+  "copied_files": 2211,
+  "omitted_files": 338,
+  "text_files_anonymized": 51,
+  "contains_private_runtime_logs": false,
+  "manufacturer_documents_included": false,
+  "model_sha256": "EB69A4D0F75E326B97E80F4C5CBBC6BC47B2B3C0B300A74649090D219484887E",
+  "privacy_changes": [
+    "JTAG serial",
+    "MATLAB and dataset directories",
+    "acquisition coordinate labels",
+    "local paths",
+    "migration provenance",
+    "network endpoints in source and documentation",
+    "physical adapter MAC",
+    "prebuilt bit/LTX omitted",
+    "raw capture paths and hashes",
+    "raw tool reports",
+    "report hostnames",
+    "report local workspace paths"
+  ],
+  "licence": "AGPL-3.0 for project-authored parts; third-party terms retained",
+  "repository": "wzjniubi666/-",
+  "validation": "python metrics/scripts/verify_publication.py --numerics",
+  "report_headers_anonymized": true,
+  "additional_historical_files_omitted": 54,
+  "network_endpoints_masked": true,
+  "original_bitstreams_included": false,
+  "tool_installation_examples_authorized": true,
+  "historical_build_archive_omitted": true
+}

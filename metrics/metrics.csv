@@ -1,0 +1,56 @@
+﻿subsystem,metric,value,unit,scope,status,evidence,note
+beamforming,physical_channels,16,channels,ACTIVE14,historical_observed,metrics/evidence/beamforming/release/contract.md,
+beamforming,active_channels,14,channels,ACTIVE14,historical_observed,metrics/evidence/beamforming/release/contract.md,
+beamforming,active_mask,0x7F7F,mask,ACTIVE14,historical_observed,metrics/evidence/beamforming/release/contract.md,
+beamforming,records_per_frame,512,records,ACTIVE14,historical_observed,metrics/evidence/beamforming/release/contract.md,
+beamforming,core_clock,200,MHz,implementation_v4,historical_observed,fpga/report/beamforming/active14_implementation/implementation_summary.json,
+beamforming,WNS_ns,0.007,ns,implementation_v4 RX duty 50%,historical_observed,fpga/report/beamforming/active14_implementation/implementation_summary.json,
+beamforming,WHS_ns,0.051,ns,implementation_v4 RX duty 50%,historical_observed,fpga/report/beamforming/active14_implementation/implementation_summary.json,
+beamforming,WPWS_ns,0.264,ns,implementation_v4 RX duty 50%,historical_observed,fpga/report/beamforming/active14_implementation/implementation_summary.json,
+beamforming,WNS_ns,0.007,ns,implementation_v4 RX duty 45%,historical_observed,fpga/report/beamforming/active14_implementation/implementation_summary.json,
+beamforming,WHS_ns,0.051,ns,implementation_v4 RX duty 45%,historical_observed,fpga/report/beamforming/active14_implementation/implementation_summary.json,
+beamforming,WPWS_ns,0.264,ns,implementation_v4 RX duty 45%,historical_observed,fpga/report/beamforming/active14_implementation/implementation_summary.json,
+beamforming,WNS_ns,0.007,ns,implementation_v4 RX duty 55%,historical_observed,fpga/report/beamforming/active14_implementation/implementation_summary.json,
+beamforming,WHS_ns,0.051,ns,implementation_v4 RX duty 55%,historical_observed,fpga/report/beamforming/active14_implementation/implementation_summary.json,
+beamforming,WPWS_ns,0.264,ns,implementation_v4 RX duty 55%,historical_observed,fpga/report/beamforming/active14_implementation/implementation_summary.json,
+beamforming,slice_luts,15797,count,implementation_v4,historical_observed,fpga/report/beamforming/active14_implementation/utilization.rpt,
+beamforming,slice_registers,46433,count,implementation_v4,historical_observed,fpga/report/beamforming/active14_implementation/utilization.rpt,
+beamforming,block_ram_tiles,30.5,count,implementation_v4,historical_observed,fpga/report/beamforming/active14_implementation/utilization.rpt,
+beamforming,dsps,106,count,implementation_v4,historical_observed,fpga/report/beamforming/active14_implementation/utilization.rpt,
+beamforming,planned_frames,4838,count,hardware_20261028,historical_hardware,metrics/evidence/beamforming/hardware_20261028/scan_summary.json,
+beamforming,verified_frames,4838,count,hardware_20261028,historical_hardware,metrics/evidence/beamforming/hardware_20261028/scan_summary.json,
+beamforming,records_per_frame,512,count,hardware_20261028,historical_hardware,metrics/evidence/beamforming/hardware_20261028/scan_summary.json,
+beamforming,status,COMPLETE_HARDWARE,state,hardware_20261028,historical_hardware,metrics/evidence/beamforming/hardware_20261028/scan_summary.json,
+beamforming,planned_frames,4838,count,hardware_20261029,historical_hardware,metrics/evidence/beamforming/hardware_20261029/scan_summary.json,
+beamforming,verified_frames,4838,count,hardware_20261029,historical_hardware,metrics/evidence/beamforming/hardware_20261029/scan_summary.json,
+beamforming,records_per_frame,512,count,hardware_20261029,historical_hardware,metrics/evidence/beamforming/hardware_20261029/scan_summary.json,
+beamforming,status,COMPLETE_HARDWARE,state,hardware_20261029,historical_hardware,metrics/evidence/beamforming/hardware_20261029/scan_summary.json,
+beamforming,physical_SNR_gain,N/A,not_measured,project,not_available,report/beamforming/design_report.md,No corresponding calibrated measurement/model in source project
+beamforming,recognition_accuracy,N/A,not_measured,project,not_available,report/beamforming/design_report.md,No corresponding calibrated measurement/model in source project
+beamforming,measured_end_to_end_throughput,N/A,not_measured,project,not_available,report/beamforming/design_report.md,No corresponding calibrated measurement/model in source project
+beamforming,measured_power,N/A,not_measured,project,not_available,report/beamforming/design_report.md,No corresponding calibrated measurement/model in source project
+beamforming,desktop_offline_tests,9,cases,desktop adapted,new_offline_pass,metrics/logs/beamforming/desktop_supplement/python_tests.json,No real FPGA traffic or adapter changes
+beamforming,desktop_network_mock_cases,5,cases,desktop adapted,new_offline_pass,metrics/logs/beamforming/desktop_supplement/network_mocks.json,No real FPGA traffic or adapter changes
+beamforming,live_desktop_python_regression,13,cases,desktop live v1.2,offline_pass,metrics/logs/beamforming/live_progress_fix/python_regression.log,No new FPGA traffic
+beamforming,live_network_cleanup_mocks,5,cases,desktop live v1.2,offline_pass,metrics/logs/beamforming/live_progress_fix/network_regression.json,No real adapter changes
+recognition,dsp,66,count,image0,archived_real_hardware,metrics/evidence/recognition/verified_results/summary.json,Historical measured result; no new hardware run
+recognition,bram_tiles,371,tiles,image0,archived_real_hardware,metrics/evidence/recognition/verified_results/summary.json,Historical measured result; no new hardware run
+recognition,cycles,3878912,cycles,image0,archived_real_hardware,metrics/evidence/recognition/verified_results/summary.json,Historical measured result; no new hardware run
+recognition,fpga_compute_ms,48.4864,ms,image0,archived_real_hardware,metrics/evidence/recognition/verified_results/summary.json,Historical measured result; no new hardware run
+recognition,fpga_path_ms,219.67330000006768,ms,image0,archived_real_hardware,metrics/evidence/recognition/verified_results/summary.json,Historical measured result; no new hardware run
+recognition,cpu_full_median_ms,14.724599999681232,ms,image0,archived_real_hardware,metrics/evidence/recognition/verified_results/summary.json,Historical measured result; no new hardware run
+recognition,exact_output_values,65536,count,image0,archived_real_hardware,metrics/evidence/recognition/verified_results/summary.json,Historical measured result; no new hardware run
+recognition,dsp,66,count,image1,archived_real_hardware,metrics/evidence/recognition/verified_results/summary.json,Historical measured result; no new hardware run
+recognition,bram_tiles,371,tiles,image1,archived_real_hardware,metrics/evidence/recognition/verified_results/summary.json,Historical measured result; no new hardware run
+recognition,cycles,3878912,cycles,image1,archived_real_hardware,metrics/evidence/recognition/verified_results/summary.json,Historical measured result; no new hardware run
+recognition,fpga_compute_ms,48.4864,ms,image1,archived_real_hardware,metrics/evidence/recognition/verified_results/summary.json,Historical measured result; no new hardware run
+recognition,fpga_path_ms,217.9231999998592,ms,image1,archived_real_hardware,metrics/evidence/recognition/verified_results/summary.json,Historical measured result; no new hardware run
+recognition,cpu_full_median_ms,15.05765000001702,ms,image1,archived_real_hardware,metrics/evidence/recognition/verified_results/summary.json,Historical measured result; no new hardware run
+recognition,exact_output_values,65536,count,image1,archived_real_hardware,metrics/evidence/recognition/verified_results/summary.json,Historical measured result; no new hardware run
+recognition,dsp,66,count,image2,archived_real_hardware,metrics/evidence/recognition/verified_results/summary.json,Historical measured result; no new hardware run
+recognition,bram_tiles,371,tiles,image2,archived_real_hardware,metrics/evidence/recognition/verified_results/summary.json,Historical measured result; no new hardware run
+recognition,cycles,3878912,cycles,image2,archived_real_hardware,metrics/evidence/recognition/verified_results/summary.json,Historical measured result; no new hardware run
+recognition,fpga_compute_ms,48.4864,ms,image2,archived_real_hardware,metrics/evidence/recognition/verified_results/summary.json,Historical measured result; no new hardware run
+recognition,fpga_path_ms,214.39379999992525,ms,image2,archived_real_hardware,metrics/evidence/recognition/verified_results/summary.json,Historical measured result; no new hardware run
+recognition,cpu_full_median_ms,15.732800000023417,ms,image2,archived_real_hardware,metrics/evidence/recognition/verified_results/summary.json,Historical measured result; no new hardware run
+recognition,exact_output_values,65536,count,image2,archived_real_hardware,metrics/evidence/recognition/verified_results/summary.json,Historical measured result; no new hardware run

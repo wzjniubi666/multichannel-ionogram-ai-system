@@ -1,0 +1,48 @@
+set_property -dict {PACKAGE_PIN AG10 IOSTANDARD LVDS} [get_ports sys_clk_p]
+set_property -dict {PACKAGE_PIN T26 IOSTANDARD LVCMOS33} [get_ports sys_rstn]
+set_property -dict {PACKAGE_PIN L11 IOSTANDARD LVCMOS33} [get_ports {led[0]}]
+set_property -dict {PACKAGE_PIN K11 IOSTANDARD LVCMOS33} [get_ports {led[1]}]
+set_property -dict {PACKAGE_PIN L15 IOSTANDARD LVCMOS33} [get_ports {led[2]}]
+set_property -dict {PACKAGE_PIN K15 IOSTANDARD LVCMOS33} [get_ports {led[3]}]
+set_property -dict {PACKAGE_PIN F12 IOSTANDARD LVCMOS33} [get_ports {led[4]}]
+create_clock -name sys_clk -period 5.000 [get_ports sys_clk_p]
+
+set_property -dict {PACKAGE_PIN W23 IOSTANDARD LVCMOS33} [get_ports eth_rst_n]
+set_property -dict {PACKAGE_PIN V19 IOSTANDARD LVCMOS33} [get_ports eth_mdc]
+set_property -dict {PACKAGE_PIN V20 IOSTANDARD LVCMOS33} [get_ports eth_mdio]
+
+set_property -dict {PACKAGE_PIN U27 IOSTANDARD LVCMOS33} [get_ports net_rxc]
+set_property -dict {PACKAGE_PIN W26 IOSTANDARD LVCMOS33} [get_ports net_rx_ctl]
+set_property -dict {PACKAGE_PIN V27 IOSTANDARD LVCMOS33} [get_ports {net_rxd[0]}]
+set_property -dict {PACKAGE_PIN V29 IOSTANDARD LVCMOS33} [get_ports {net_rxd[1]}]
+set_property -dict {PACKAGE_PIN V30 IOSTANDARD LVCMOS33} [get_ports {net_rxd[2]}]
+set_property -dict {PACKAGE_PIN V25 IOSTANDARD LVCMOS33} [get_ports {net_rxd[3]}]
+set_property -dict {PACKAGE_PIN U28 IOSTANDARD LVCMOS33} [get_ports net_txc]
+set_property -dict {PACKAGE_PIN V26 IOSTANDARD LVCMOS33} [get_ports net_tx_ctl]
+set_property -dict {PACKAGE_PIN T25 IOSTANDARD LVCMOS33} [get_ports {net_txd[0]}]
+set_property -dict {PACKAGE_PIN U25 IOSTANDARD LVCMOS33} [get_ports {net_txd[1]}]
+set_property -dict {PACKAGE_PIN U29 IOSTANDARD LVCMOS33} [get_ports {net_txd[2]}]
+set_property -dict {PACKAGE_PIN U30 IOSTANDARD LVCMOS33} [get_ports {net_txd[3]}]
+create_clock -name net_rx_clk -period 8.000 [get_ports net_rxc]
+
+create_generated_clock -name net_tx_clk -source [get_ports net_rxc] [get_ports net_txc]
+set_output_delay -clock net_tx_clk -max -0.5 [get_ports {net_tx_ctl net_txd[*]}]
+set_output_delay -clock net_tx_clk -min -3.5 [get_ports {net_tx_ctl net_txd[*]}]
+set_output_delay -clock net_tx_clk -clock_fall -add_delay -max -0.5 [get_ports {net_tx_ctl net_txd[*]}]
+set_output_delay -clock net_tx_clk -clock_fall -add_delay -min -3.5 [get_ports {net_tx_ctl net_txd[*]}]
+
+# Center-aligned DDR input. Separate virtual launch clock scopes edge exceptions to the PHY inputs only.
+create_clock -name rgmii_launch -period 8.000
+set_input_delay -clock rgmii_launch -max -1.15 [get_ports {net_rx_ctl net_rxd[*]}]
+set_input_delay -clock rgmii_launch -min -2.85 [get_ports {net_rx_ctl net_rxd[*]}]
+set_input_delay -clock rgmii_launch -clock_fall -add_delay -max -1.15 [get_ports {net_rx_ctl net_rxd[*]}]
+set_input_delay -clock rgmii_launch -clock_fall -add_delay -min -2.85 [get_ports {net_rx_ctl net_rxd[*]}]
+# Data launched before the corresponding sampling edge; check setup on that edge, not one cycle later.
+set_multicycle_path 0 -setup -rise_from [get_clocks rgmii_launch] -rise_to [get_clocks net_rx_clk]
+set_multicycle_path 0 -setup -fall_from [get_clocks rgmii_launch] -fall_to [get_clocks net_rx_clk]
+# Each bit's setup uses its matching edge, hold uses the next opposite-edge transition (4ns later).
+set_false_path -setup -rise_from [get_clocks rgmii_launch] -fall_to [get_clocks net_rx_clk]
+set_false_path -setup -fall_from [get_clocks rgmii_launch] -rise_to [get_clocks net_rx_clk]
+set_false_path -hold -rise_from [get_clocks rgmii_launch] -rise_to [get_clocks net_rx_clk]
+set_false_path -hold -fall_from [get_clocks rgmii_launch] -fall_to [get_clocks net_rx_clk]
+set_property DRIVE 8 [get_ports {net_tx_ctl net_txd[*]}]

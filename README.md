@@ -63,9 +63,9 @@ python host/app/recognition/app_gui.py
 
 ## 模型、构建与证据
 
-`host/model/recognition/best.pt`、识别MEM和bit是配套的一组，模型SHA256为`cfb99b2504e2bc37c2aab8cfe0db5a4c8ef22f001e8e0a702f2459211c3cb011`。类别为Backscatter echo和Vertical echo；不要仅替换PT继续使用旧硬件参数。
+`host/model/recognition/best.pt`与识别MEM来自配套工程；bit需本地配置通信地址后重新构建，模型SHA256为`eb69a4d0f75e326b97e80f4c5cbbc6bc47b2b3c0b300a74649090d219484887e`。类别为Backscatter echo和Vertical echo；不要仅替换PT继续使用旧硬件参数。
 
-公开版保留源码、匹配参数/bit、软件数值夹具和选定图表。厂商手册、DCP、原始个人日志、网络备份、私有发布封印及重复迁移历史不发布。路径和采集位置标识已匿名化；原始模型、参数和bit字节保持。历史硬件指标不代表本次执行了新的板卡测试或取得端到端加速。
+公开版保留源码、匹配模型参数、软件数值夹具和选定图表。通信地址已改为文档示例；原bit/LTX不公开，需按[本地通信配置](docs/network_configuration.md)重建。厂商手册、DCP、原始个人日志、网络备份、私有发布封印及重复迁移历史不发布。路径和采集位置标识已匿名化；原始模型与数值参数字节保持。历史硬件指标不代表本次执行了新的板卡测试或取得端到端加速。
 
 详见[架构](docs/architecture.md)、[接口](docs/interface.md)、[接线](docs/hardware_setup.md)、[模型](host/model/MODEL.md)和[发布说明](report/publication.md)。部分归档文档描述完整本地交付版的可选工件，公开内容以发布说明和文件清单为准。
 

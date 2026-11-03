@@ -1,0 +1,4 @@
+﻿case,evidence_kind,link_mbps,convolutions,dsp,bram_tiles,cycles,fpga_compute_ms,fpga_path_ms,cpu_full_median_ms,speedup_cpu_over_fpga_path,exact_output_values,udp_retries
+image0,archived_real_hardware,1000,15,66,371,3878912,48.4864,219.67330000006768,14.724599999681232,0.06702953886374309,65536,0
+image1,archived_real_hardware,1000,15,66,371,3878912,48.4864,217.9231999998592,15.05765000001702,0.0690961311142033,65536,0
+image2,archived_real_hardware,1000,15,66,371,3878912,48.4864,214.39379999992525,15.732800000023417,0.07338271908995923,65536,0

@@ -1,0 +1,17 @@
+[
+  {
+    "frequency_mhz": 7.5,
+    "direct_dot_max_abs_error": 0.0,
+    "code_sha256": "4DE0368FD393D7E856AB4C8B9C727FADFE0E82349241E81A57AE1A3B47936C63"
+  },
+  {
+    "frequency_mhz": 10.0,
+    "direct_dot_max_abs_error": 0.0,
+    "code_sha256": "4DE0368FD393D7E856AB4C8B9C727FADFE0E82349241E81A57AE1A3B47936C63"
+  },
+  {
+    "frequency_mhz": 15.0,
+    "direct_dot_max_abs_error": 0.0,
+    "code_sha256": "4DE0368FD393D7E856AB4C8B9C727FADFE0E82349241E81A57AE1A3B47936C63"
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "hardware_accessed": false,
+  "cases": [
+    {
+      "case": "image0.npz",
+      "exact_values": 65536,
+      "debug_values": 60,
+      "challenge_passed": true,
+      "seconds": 0.28447269999924174
+    },
+    {
+      "case": "image1.npz",
+      "exact_values": 65536,
+      "debug_values": 60,
+      "challenge_passed": true,
+      "seconds": 0.28079999999863503
+    },
+    {
+      "case": "image2.npz",
+      "exact_values": 65536,
+      "debug_values": 60,
+      "challenge_passed": true,
+      "seconds": 0.2858577000006335
+    }
+  ],
+  "verified_at": "2026-11-03T15:02:03",
+  "model_reference_check_passed": true,
+  "packaging_only": true,
+  "full_vivado_rebuild_performed": false,
+  "new_hardware_run_performed": false
+}

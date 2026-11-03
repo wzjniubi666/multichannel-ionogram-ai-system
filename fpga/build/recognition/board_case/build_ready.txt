@@ -1,0 +1,1 @@
+New model, regional gigabit DDR, fixed board pins and 80MHz core timing passed

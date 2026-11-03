@@ -1,0 +1,106 @@
+{
+  "version": 1,
+  "status": "READY_OFFLINE_PLAN",
+  "waveform": "M",
+  "records_per_frame": 512,
+  "channels": 16,
+  "active_channel_mask": 32639,
+  "active_channels": 14,
+  "excluded_channels": [
+    7,
+    15
+  ],
+  "preprocessing": "HF_M255_PHASE4_PER_PERIOD_V1",
+  "capture_prefix": "PUBLIC_SOFTWARE_FIXTURE",
+  "capture_directory": "example_data",
+  "source": [],
+  "frequency_mhz": [
+    7.5,
+    10.0,
+    15.0
+  ],
+  "source_frequency_index": [
+    1,
+    6,
+    16
+  ],
+  "relative_lag_samples": [
+    20,
+    148,
+    244
+  ],
+  "record_starts": [
+    0
+  ],
+  "frames": 9,
+  "profile": {
+    "order": 8,
+    "samples_per_chip": 4,
+    "sample_period_us": 25.6,
+    "records": 512,
+    "initial_state": "11111111",
+    "chip_phase": 0,
+    "dtype": ">i2"
+  },
+  "reference_files_sha256": {
+    "m255a.mat": "85B8730EA68A0F67193280D35DD26D53C5BB88651D43878AF29F829F815F0335",
+    "readone.m": "B44C77D5D17D48EE89E757836D10E7F0A81330A95E296F269B7A9B41EBF3290C",
+    "readall.m": "CF99EA9C6FB37EB65AA94E07A9490BCB793C6D169481BAC1D8F5418D7FD9B29B"
+  },
+  "correlation": "per-period four phases independently correlated with actual255 chips; lag=4*chip_lag+phase; unnormalized sum255",
+  "period_accumulation_before_fpga": false,
+  "layout": "frequency,period,chip,sample_phase,IQ; >i2; consistent with supplied reference indexing",
+  "geometry": "L16 8+8 arms 10m, origin empty, az113/el35; still unverified mapping",
+  "range_axis": {
+    "convention": "HF_reference_script",
+    "step_km": 7.68,
+    "index_offset": 1,
+    "calibrated": false
+  },
+  "quantization": "gain shared over16 channels and512 periods per frequency/lag; power of two; target16383; nearest ties-even; reject clipping",
+  "frame_order": "((frequency_position*lag_count)+lag_position)*block_count+block_position",
+  "algorithm": "MVDR_JOINT512",
+  "integration": "primary abs(sum_512_verified_complex_outputs/gain)^2; secondary mean output power; one shared MVDR weight set over512 periods",
+  "physical_parameters_verified": false,
+  "hardware_scan_executed": false,
+  "loading": 0.05,
+  "fixed_model_quality": {
+    "max_weight_error": 0.00029746788056125064,
+    "max_constraint_error": 0.0005490996225556889,
+    "beam_relative_l2_range": [
+      0.0013558359228589422,
+      0.021333390302802825
+    ],
+    "beam_relative_l2_over_2percent": 1,
+    "note": "reported diagnostic, not SNR; weak outputs are sensitive to integer rounding"
+  },
+  "active14_profile": {
+    "active_mask": 32639,
+    "profile": "ACTIVE14",
+    "hardware_bound_at_execution": true
+  },
+  "elapsed_seconds": 5.862038499908522,
+  "source_code_sha256": {
+    "m512_active14_plan.py": "016E4D890460AB4BDBC9AA810D1CD105C7E7019343012D011990577A2C841C35",
+    "m_reference_preprocess.py": "8F71580697763FFF31648CA092C4994529E0F9346D8E49881688DF753F72F143",
+    "m_batch_plan.py": "679FF5E3B0368C0E9D71C5835AC7949128040A49C3E6D35330DAB290E18F6D66",
+    "mvdr_fixed_reference.py": "632F5580D1D764188EA5BA45E5480CC185C8A2DBDFEBCA598B17CF216D8A30D0",
+    "m_sequence_pipeline.py": "D34D49E1A3D4917940246B7924A2A9CC70F086A6C77CCAAF769396243A14F33A",
+    "mvdr_reference.py": "5FAE6C7BC846E9BBF10A92578E1E9DA94DDD508D6EF772CC8078CBF5572A250F",
+    "export_m_rtl_vectors.py": "AAEEEDA56C86DE5EEC2B6A6A8BF4E24932F92B00124F3EA9C5D5FA09761A2AC0"
+  },
+  "file_sha256": {
+    "expected_beam.npy": "0ECF986959651802DB32D40CEA98E6A09A3687DE6A377C43B278863E068B5308",
+    "expected_weights.npy": "C7B85F470DF1B843577C9C372D007666A5266A6551E76E6C99502D21A4558837",
+    "gains.npy": "2CC87C485A2538F667934F294C9A7538996F6FFA0BA4A45832B2B1CEA8864AF0",
+    "iq.npy": "5F874D1B6114452DAF8AC166C0395376AC7EF65139AB050CF316F49CB0004651",
+    "preprocess_checks.json": "850F98F7E51BB3C23EA867E124576C46E3391E1F55343ADF24BA4021E5030827",
+    "quality.npy": "788D70E206EF4D8710B450269851786298BDF34C8916ED0B79E0A4ACAEAA974C",
+    "reference_code.npy": "BF09EEED783C100597997BE23080C605865A0771887583BD3ED6D8615F1F78D2",
+    "steering.npy": "3C9127C1C407B2E1535F61A758CA26D554490D51682DB9ABFE112029213600E9",
+    "reference_snapshot\\m255a.mat": "85B8730EA68A0F67193280D35DD26D53C5BB88651D43878AF29F829F815F0335",
+    "reference_snapshot\\readall.m": "6606C76D88F2A0E2DCD8E2A9EB354C74C27CC2C60669EE8A5A78E9BA1790CEFF",
+    "reference_snapshot\\readone.m": "715768FFABF1F74365FF9E55DF19555A235D6B2FFC014BE6516E4F31CCC42295"
+  },
+  "public_fixture_note": "Anonymized software verification fixture; not a production hardware release seal."
+}

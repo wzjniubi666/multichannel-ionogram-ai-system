@@ -1,0 +1,47 @@
+
+# Create a project
+open_component -reset component_ram_uram -flow_target vivado
+
+# Add design files
+add_files resource_uram.cpp
+# Add test bench & files
+add_files -tb resource_uram_test.cpp
+add_files -tb result.golden.dat
+
+# Set the top-level function
+set_top resource_uram
+
+# ########################################################
+# Create a solution
+
+# Define technology and clock rate
+set_part  {xcvu9p-flga2104-2-i}
+create_clock -period 4
+
+# Set variable to select which steps to execute
+set hls_exec 2
+set_directive_interface -mode m_axi resource_uram dataout -depth 1
+
+csim_design
+
+if {$hls_exec == 1} {
+	# Run Synthesis and Exit
+	csynth_design
+	
+} elseif {$hls_exec == 2} {
+	# Run Synthesis, RTL Simulation and Exit
+	csynth_design
+	
+	cosim_design
+} elseif {$hls_exec == 3} { 
+	# Run Synthesis, RTL Simulation, RTL implementation and Exit
+	csynth_design
+	
+	cosim_design
+	export_design
+} else {
+	# Default is to exit after setup
+	csynth_design
+}
+
+exit
